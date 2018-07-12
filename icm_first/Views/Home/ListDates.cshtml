@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "ListDates";
+
+}
+
+<div class="jumbotron jumbotron-fluid" style="height:110px; padding:10px;">
+
+    <div class="container" >
+        <h2 class="">Prayers Time</h2>
+        <h4 style="font-family:Cambria; margin-bottom:20px;">Prayer times for the month of @ViewBag.month</h4>
+    </div>
+
+</div>
+<div>
+    <div class="panel panel-default">
+
+        <table class="table table-curved table-sm table-dark table-bordered">
+            <thead>
+                <tr style="background-color:cornflowerblue; color:white; font-family:Calibri;">
+                    <th scope="col" >Date</th>
+                    <th scope="col">Day</th>
+                    <th scope="col">Hijriy</th>
+                    <th scope="col">Fajr</th>
+                    <th scope="col">Iqama</th>
+                    <th scope="col">Sun Rise</th>
+                    <th scope="col">Zuhr</th>
+                    <th scope="col">Iqama</th>
+                    <th scope="col">Asr</th>
+                    <th scope="col">Iqama</th>
+                    <th scope="col">Maghrib</th>
+                    <th scope="col">Iqama</th>
+                    <th scope="col">Isha</th>
+                    <th scope="col">Iqama</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < @ViewBag.times.GetLength(0) - 1; i++)
+                {
+                    @:<tr>
+                        @:<th scope="row" style="font-size:smaller;">@ViewBag.dates[@i]</th>
+                        @:<th scope="row" style="font-size:smaller;">@ViewBag.days[@i]</th>
+                        @:<th scope="row" style="font-size:smaller;">@ViewBag.hijri[@i]</th>
+                        @:<th scope="row" style="font-size:smaller;">@ViewBag.times[@i, 0]</th>
+                        @:<th scope="row" style="font-size:smaller;">@ViewBag.times[@i, 0]</th>
+                        @:<th scope="row" style="font-size:smaller;">@ViewBag.times[@i, 1]</th>
+                        @:<th scope="row" style="font-size:smaller;">@ViewBag.times[@i, 2]</th>
+                        @:<th scope="row" style="font-size:smaller;">@ViewBag.times[@i, 2]</th>
+                        @:<th scope="row" style="font-size:smaller;">@ViewBag.times[@i, 3]</th>
+                        @:<th scope="row" style="font-size:smaller;">@ViewBag.times[@i, 3]</th>
+                        @:<th scope="row" style="font-size:smaller;">@ViewBag.times[@i, 4]</th>
+                        @:<th scope="row" style="font-size:smaller;">@ViewBag.times[@i, 4]</th>
+                        @:<th scope="row" style="font-size:smaller;">@ViewBag.times[@i, 5]</th>
+                        @:<th scope="row" style="font-size:smaller;">@ViewBag.times[@i, 5]</th>
+                    @:</tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
