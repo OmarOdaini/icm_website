@@ -12,7 +12,7 @@ using icm_first.Models;
 using System.Net.Mail;
 using System.Net;
 using MongoDB.Driver;
-
+using System.Web.Script.Serialization;
 
 namespace icm_first.Controllers
 {
@@ -25,13 +25,28 @@ namespace icm_first.Controllers
             return View();
         }
 
-        public string GetParagraphs(ParagraphModel model)
+        public dynamic GetParagraphs(ParagraphModel model)
         {
-            var client = new MongoClient(); // add online connection 
+            string[,] temp = new string [10,2];
+            int count = 0;
+            var client = new MongoClient("mongodb://OmarOdaini:OmarOdaini1@ds235401.mlab.com:35401/icm_website"); // add online connection 
             var db = client.GetDatabase("icm_website");
-            var collection = db.GetCollection<ParagraphModel>("paragraphs");
-            var paragraph = collection.Find(x => x.title =="History");
-            return paragraph.ToString();
+            var collection = db.GetCollection<ParagraphModel>("paragraphs").AsQueryable<ParagraphModel>();
+
+            //var filter = Builders<ParagraphModel>.Filter.Eq("title","Staff");
+            //var paragraph = collection.Find(filter).ToList();
+
+            var paragraph = collection.ToList();
+
+
+            foreach (ParagraphModel item in paragraph)
+            {
+
+                temp[count,0] = item.title;
+                temp[count,1] = item.Pbody;
+                count++;
+            }
+            return temp;
         }
 
         public ActionResult About(ParagraphModel model)
