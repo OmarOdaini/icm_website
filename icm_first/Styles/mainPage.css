@@ -44,3 +44,11 @@
     font-family: georgia;
     font-size: 20px;
 }
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    font-size:20px;
+    left: 0;
+    text-align: center;
+    margin: 0 auto;
+}
