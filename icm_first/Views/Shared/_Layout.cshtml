@@ -12,7 +12,7 @@
             padding: 16px;
         }
         .Paratitle {
-            color: #ffffff;
+            color:cadetblue;
             font-family: 'Lato', sans-serif;
             font-size: 25px;
             font-weight: 100;
@@ -20,9 +20,9 @@
             margin: 8px;
         }
         .MainTitle {
-            font-family: georgia, serif;
-            color:black;
-            margin: 0;
+            font-family: georgia;
+            color:khaki;
+            margin: 5px;
             padding: 0px 0px 6px 0px;
             font-size: 30px;
             line-height: 44px;
@@ -86,11 +86,11 @@
                 <div id="navbarCollapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li class="active">@Html.ActionLink("Contact Us", "Contact", "Home")</li>
-                        <li class="active">@Html.ActionLink("Prayer Times", "ListDates", "Home")</li>
+                        <li class="active">@Html.ActionLink("Contact Us", "Contact", "Contact")</li>
+                        <li class="active">@Html.ActionLink("Prayer Times", "Date", "Date")</li>
                         <li class="active">@Html.ActionLink("Resources", "Index", "Home")</li>
                         <li class="active">@Html.ActionLink("Services", "Contact", "Home")</li>
-                        <li class="active">@Html.ActionLink("About Us", "About", "Home")</li>
+                        <li class="active">@Html.ActionLink("About Us", "Paragraph", "Paragraph")</li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#">ClickMe</a></li>
@@ -123,52 +123,52 @@
 
             <!-- Side Table -->
             <!--   <div class="col-md-1" style="background-color: rgba(255, 255, 255, 0);  width:270px; height:360px; margin-top:170px; margin-top:120px; z-index:10; padding-left: 0px;">
-            <div style="position:fixed;">
-                <h3 style="color:darkslateblue; ">Today's Prayer Schedule: </h3>
-                <table class="table table-curved table-sm table-bordered" style="background-color:white; width:100%;">
-                    <thead>
-                        <tr style="background-color:cornflowerblue; color:white; font-family:Calibri;">
-                            <th scope="row">Prayer</th>
-                            <th scope="row">Time</th>
+                <div style="position:fixed;">
+                    <h3 style="color:darkslateblue; ">Today's Prayer Schedule: </h3>
+                    <table class="table table-curved table-sm table-bordered" style="background-color:white; width:100%;">
+                        <thead>
+                            <tr style="background-color:cornflowerblue; color:white; font-family:Calibri;">
+                                <th scope="row">Prayer</th>
+                                <th scope="row">Time</th>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">3</th>
-                            <th scope="row">4</th>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <th scope="row">4</th>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <th scope="row">4</th>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <th scope="row">4</th>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <th scope="row">4</th>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <th scope="row">4</th>
-                        </tr>
-                    </tbody>
-                </table>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">3</th>
+                                <th scope="row">4</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <th scope="row">4</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <th scope="row">4</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <th scope="row">4</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <th scope="row">4</th>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <th scope="row">4</th>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                </div>
+
+
 
             </div>
-            </div>
-
-
-
         </div>
-    </div>
-        -->
+            -->
             <!-- Footer -->
             <div class="footer" style="margin-top:670px;">
 
@@ -207,6 +207,7 @@
                     }
                 }
             </script>
-
+        </div>
+    </div>
 </body>
 </html>
