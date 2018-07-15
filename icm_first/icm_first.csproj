@@ -211,9 +211,11 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\Jsaextra.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Sidebar.js" />
     <Content Include="Styles\mainPage.css" />
+    <Content Include="Styles\SideBar.css" />
+    <Content Include="Styles\TopBar.css" />
     <Content Include="Views\masjid.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

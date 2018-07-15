@@ -22,7 +22,6 @@ namespace icm_first.Controllers
             string[] days = new string[monthdays];
             string[] hijri = new string[monthdays];
             int hourSub;  // used to get hours under 12
-            string hourSub2 = "";
             string month = "", today = "";
             string TodayHijri = "Couldn't Copy";
             JObject api;
@@ -83,23 +82,30 @@ namespace icm_first.Controllers
 
                         Dhuhr = api["data"][usableIndex]["timings"]["Dhuhr"].ToString();
                         Dhuhr = Dhuhr.Replace("(CDT)", string.Empty);
+                        hourSub = int.Parse(Dhuhr.Substring(0, 2));
+                        if (hourSub > 12) { hourSub = hourSub % 12; }
+                        Dhuhr = String.Concat(hourSub, Dhuhr.Substring(2, Dhuhr.Length - 2));
                         monthPrayers[usableIndex, 2] = Dhuhr;
 
                         Asr = api["data"][usableIndex]["timings"]["Asr"].ToString();
                         Asr = Asr.Replace("(CDT)", string.Empty);
+                        hourSub = int.Parse(Asr.Substring(0, 2));
+                        if (hourSub > 12) { hourSub = hourSub % 12; }
+                        Asr = String.Concat(hourSub, Asr.Substring(2, Asr.Length - 2));
                         monthPrayers[usableIndex, 3] = Asr;
 
                         Maghrib = api["data"][usableIndex]["timings"]["Maghrib"].ToString();
                         Maghrib = Maghrib.Replace("(CDT)", string.Empty);
-
                         hourSub = int.Parse(Maghrib.Substring(0, 2));
                         if (hourSub > 12) { hourSub = hourSub % 12; }
                         Maghrib = String.Concat(hourSub, Maghrib.Substring(2, Maghrib.Length-2));
-
                         monthPrayers[usableIndex, 4] = Maghrib;
 
                         Isha = api["data"][usableIndex]["timings"]["Isha"].ToString();
                         Isha = Isha.Replace("(CDT)", string.Empty);
+                        hourSub = int.Parse(Isha.Substring(0, 2));
+                        if (hourSub > 12) { hourSub = hourSub % 12; }
+                        Isha = String.Concat(hourSub, Isha.Substring(2, Isha.Length - 2));
                         monthPrayers[usableIndex, 5] = Isha;
 
                         usableIndex++;

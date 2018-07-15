@@ -1,58 +1,22 @@
-﻿h5 {
-    font-family:Georgia;
-    color:chocolate;
-    font-size:larger;
-}
-body {
-    background-color:blue;
-    margin: 0px;
-    padding-left: 0px;
-    font-family: "Lato", sans-serif;
-    background-repeat: no-repeat;
-    background-size: 1600px 1000px;
+﻿.Paratitle {
+    color: cadetblue;
+    font-family: 'Lato', sans-serif;
+    font-size: 25px;
+    font-weight: 100;
+    line-height: 58px;
+    margin: 8px;
 }
 
-.header {
-    background-color: cornflowerblue;
-    color: #f1f1f1;
-    z-index: 1;
-
-}
-.navbaredit {
-    margin: 0px;
-}
-
-h2 {
-    font-family: "Lato", sans-serif;
-    color: aliceblue;
-}
-h4 {
-    color: antiquewhite;
-    font-family: 'Javanese Text';
-}
-
-li {
+.MainTitle {
+    font-family: georgia;
+    color:darkcyan;
     margin: 5px;
-    margin-right: 20px;
+    padding: 0px 0px 6px 0px;
+    font-size: 30px;
+    line-height: 44px;
+    letter-spacing: -2px;
+    font-weight: bold;
 }
-
-.padd {
-    padding-left: 40px;
-    padding-right: 40px;
-    padding-bottom: 1px;
-}
-#color{
-    background-color:maroon;
-}
-nav {
-    z-index: 1;
-    margin: 0px;
-}
-/** Sticky Nav bar css*/
-.content {
-    padding: 16px;
-}
-
 /* The sticky class is added to the header with JS when it reaches its scroll position */
 .sticky {
     position: fixed;
@@ -64,3 +28,19 @@ nav {
     .sticky + .content {
         padding-top: 102px;
     }
+
+.control-label {
+    color: darkcyan;
+    margin: 0px;
+    padding: 0px;
+    font-family: georgia;
+    font-size: 20px;
+}
+
+.control-text {
+    color: darkcyan;
+    width: 250px;
+    height: 450px;
+    font-family: georgia;
+    font-size: 20px;
+}
