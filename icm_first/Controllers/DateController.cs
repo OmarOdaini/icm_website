@@ -21,6 +21,8 @@ namespace icm_first.Controllers
             string[] dates = new string[monthdays];
             string[] days = new string[monthdays];
             string[] hijri = new string[monthdays];
+            int hourSub;  // used to get hours under 12
+            string hourSub2 = "";
             string month = "", today = "";
             string TodayHijri = "Couldn't Copy";
             JObject api;
@@ -89,6 +91,11 @@ namespace icm_first.Controllers
 
                         Maghrib = api["data"][usableIndex]["timings"]["Maghrib"].ToString();
                         Maghrib = Maghrib.Replace("(CDT)", string.Empty);
+
+                        hourSub = int.Parse(Maghrib.Substring(0, 2));
+                        if (hourSub > 12) { hourSub = hourSub % 12; }
+                        Maghrib = String.Concat(hourSub, Maghrib.Substring(2, Maghrib.Length-2));
+
                         monthPrayers[usableIndex, 4] = Maghrib;
 
                         Isha = api["data"][usableIndex]["timings"]["Isha"].ToString();
