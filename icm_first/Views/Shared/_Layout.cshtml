@@ -14,12 +14,21 @@
         .Paratitle {
             color: #ffffff;
             font-family: 'Lato', sans-serif;
-            font-size: 35px;
+            font-size: 25px;
             font-weight: 100;
             line-height: 58px;
             margin: 8px;
         }
-
+        .MainTitle {
+            font-family: georgia, serif;
+            color:black;
+            margin: 0;
+            padding: 0px 0px 6px 0px;
+            font-size: 30px;
+            line-height: 44px;
+            letter-spacing: -2px;
+            font-weight: bold;
+        }
         /* The sticky class is added to the header with JS when it reaches its scroll position */
         .sticky {
             position: fixed;
@@ -49,7 +58,7 @@
 
 </head>
 <!-- background="https://static01.nyt.com/images/2015/08/15/us/15STARKVILLEJP2/15STARKVILLEJP2-articleLarge.jpg?quality=90&auto=webp" style="padding:0px; margin:0px;" -->
-<body style="padding:0px; background-repeat: repeat-y;" background="https://images.pexels.com/photos/163999/pexels-photo-163999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" >
+<body style="padding:0px; background-repeat: repeat-y;" background="https://images.pexels.com/photos/531872/pexels-photo-531872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" >
     <div class="header" id="myHeader">
             <div class="row">
                 <div class="col-md-1" style="width:1200px;">
@@ -97,7 +106,7 @@
             </div>
 
 
-            <div class="content col-md-10" style="width:1050px; height: 50px;" >
+            <div class="content col-md-10" style="width:1050px; height: 50px;">
                 @if (TempData["notice"] != null)
                 {
                     <div id="mydiv" class="jumbotron jumbotron-fluid" style=" color:aquamarine; width:400px; background-color:mediumseagreen !important;">
@@ -112,67 +121,67 @@
 
 
 
-           <!-- Side Table --> 
-            <div class="col-md-1" style="background-color: rgba(255, 255, 255, 0);  width:270px; height:360px; margin-top:170px; margin-top:120px; z-index:10; padding-left: 0px;">
-                <div style="position:fixed;">
-                    <h3 style="color:darkslateblue; ">Today's Prayer Schedule: </h3>
-                    <table class="table table-curved table-sm table-bordered" style="background-color:white; width:100%;">
-                        <thead>
-                            <tr style="background-color:cornflowerblue; color:white; font-family:Calibri;">
-                                <th scope="row">Prayer</th>
-                                <th scope="row">Time</th>
+            <!-- Side Table -->
+            <!--   <div class="col-md-1" style="background-color: rgba(255, 255, 255, 0);  width:270px; height:360px; margin-top:170px; margin-top:120px; z-index:10; padding-left: 0px;">
+            <div style="position:fixed;">
+                <h3 style="color:darkslateblue; ">Today's Prayer Schedule: </h3>
+                <table class="table table-curved table-sm table-bordered" style="background-color:white; width:100%;">
+                    <thead>
+                        <tr style="background-color:cornflowerblue; color:white; font-family:Calibri;">
+                            <th scope="row">Prayer</th>
+                            <th scope="row">Time</th>
 
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">3</th>
-                                <th scope="row">4</th>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <th scope="row">4</th>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <th scope="row">4</th>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <th scope="row">4</th>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <th scope="row">4</th>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <th scope="row">4</th>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                </div>
-                </div>
-
-
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">3</th>
+                            <th scope="row">4</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <th scope="row">4</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <th scope="row">4</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <th scope="row">4</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <th scope="row">4</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <th scope="row">4</th>
+                        </tr>
+                    </tbody>
+                </table>
 
             </div>
-        </div>
+            </div>
 
-        <!-- Footer -->
-        <div class="footer" style="margin-top:670px;">
-            <hr />
-            <h4>&copy; @DateTime.Now.Year - ICM Starkville</h4>
-        </div>
 
-        <div>
-            @Scripts.Render("~/bundles/jquery")
-            @Scripts.Render("~/bundles/bootstrap")
-            @RenderSection("scripts", required: false)
-        </div>
 
-           <!-- JS Scripts -->
+        </div>
+    </div>
+        -->
+            <!-- Footer -->
+            <div class="footer" style="margin-top:670px;">
+
+                <h4>&copy; @DateTime.Now.Year - ICM Starkville</h4>
+            </div>
+
+            <div>
+                @Scripts.Render("~/bundles/jquery")
+                @Scripts.Render("~/bundles/bootstrap")
+                @RenderSection("scripts", required: false)
+            </div>
+
+            <!-- JS Scripts -->
             <script>
                 setTimeout(fade_out, 2000);
 
@@ -180,7 +189,7 @@
                     $("#mydiv").fadeOut().empty();
                 }
 
-                // When the user scrolls the page, execute myFunction 
+                // When the user scrolls the page, execute myFunction
                 window.onscroll = function () { myFunction() };
 
                 // Get the header

@@ -27,28 +27,43 @@ namespace icm_first.Controllers
 
         public dynamic GetParagraphs(ParagraphModel model)
         {
-            string[,] temp = new string [10,2];
+            string[,,] paragraphs = new string [3,10,2];
             int count = 0;
             var client = new MongoClient("mongodb://OmarOdaini:OmarOdaini1@ds235401.mlab.com:35401/icm_website"); // add online connection 
             var db = client.GetDatabase("icm_website");
-            var collection = db.GetCollection<ParagraphModel>("paragraphs").AsQueryable<ParagraphModel>();
+            var collection = db.GetCollection<ParagraphModel>("paragraphs");
 
-            //var filter = Builders<ParagraphModel>.Filter.Eq("title","Staff");
-            //var paragraph = collection.Find(filter).ToList();
+            //.AsQueryable<ParagraphModel>(); this and line:39 for return all collections
+            //var paragraph = collection.ToList();
 
-            var paragraph = collection.ToList();
-
+            var filter = Builders<ParagraphModel>.Filter.Eq("cat","History");
+            var paragraph = collection.Find(filter).ToList();
 
             foreach (ParagraphModel item in paragraph)
             {
-
-                temp[count,0] = item.title;
-                temp[count,1] = item.Pbody;
+                paragraphs[0,count,0] = item.title;
+                paragraphs[0,count,1] = item.Pbody;
                 count++;
             }
-            return temp;
-        }
 
+            count = 0;
+
+            filter = Builders<ParagraphModel>.Filter.Eq("cat", "Staff");
+            paragraph = collection.Find(filter).ToList();
+
+            foreach (ParagraphModel item in paragraph)
+            {
+                paragraphs[1,count, 0] = item.title;
+                paragraphs[1,count, 1] = item.Pbody;
+                count++;
+            }
+
+
+
+            return paragraphs;
+        }
+        // passing data in the URL bring it to ActionResult parameters  
+        // int? is nullable "can be null"
         public ActionResult About(ParagraphModel model)
         {
             ViewBag.para = "Not Working !!";

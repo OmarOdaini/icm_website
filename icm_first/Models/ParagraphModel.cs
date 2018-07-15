@@ -13,6 +13,7 @@ namespace icm_first.Models
     {
         public ObjectId id { set; get; }
         public string title { set; get; }
+        public string cat { set; get; }
         public string Pbody { set; get; }
         public string ImageURL { set; get; }
     }
