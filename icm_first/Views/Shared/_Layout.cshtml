@@ -3,110 +3,71 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICM at Starkville</title>
-
-        <link rel="stylesheet" type="text/css" runat="server" href="~/Styles/mainPage.css" />
-    <style>
-        /* Page content */
-        .content {
-            padding: 16px;
-        }
-        .Paratitle {
-            color:cadetblue;
-            font-family: 'Lato', sans-serif;
-            font-size: 25px;
-            font-weight: 100;
-            line-height: 58px;
-            margin: 8px;
-        }
-        .MainTitle {
-            font-family: georgia;
-            color:khaki;
-            margin: 5px;
-            padding: 0px 0px 6px 0px;
-            font-size: 30px;
-            line-height: 44px;
-            letter-spacing: -2px;
-            font-weight: bold;
-        }
-        /* The sticky class is added to the header with JS when it reaches its scroll position */
-        .sticky {
-            position: fixed;
-            top: 0;
-            width: 100%
-        }
-
-            /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-            .sticky + .content {
-                padding-top: 102px;
-            }
-        .control-label{
-            color: antiquewhite;
-            margin:0px;
-            padding:0px;
-        }
-        .control-text {
-            color: antiquewhite;
-            width: 250px;
-            height: 450px;
-        }
-    </style>
-    <script src="~/Scripts/Jsaextra.js"></script>
+    <link href="~/Styles/SideBar.css" rel="stylesheet" />
+    <link href="~/Styles/TopBar.css" rel="stylesheet" />
+    <link href="~/Styles/mainPage.css" rel="stylesheet" />
+    <script src="~/Scripts/Sidebar.js"></script>
+    <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
-
 </head>
-<!-- background="https://static01.nyt.com/images/2015/08/15/us/15STARKVILLEJP2/15STARKVILLEJP2-articleLarge.jpg?quality=90&auto=webp" style="padding:0px; margin:0px;" -->
-<body style="padding:0px; background-repeat: repeat-y;" background="https://images.pexels.com/photos/531872/pexels-photo-531872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" >
-    <div class="header" id="myHeader">
-            <div class="row">
-                <div class="col-md-1" style="width:1200px;">
-                    <h2>Welcome to ICM at Starkville</h2>
-                </div>
-                <div class="content col-md-2" style="width:250px; padding:0px;">
-                    <h4 style="color:antiquewhite; font-family:'Javanese Text';">@ViewBag.hijriDay</h4>
-                    <h4 style="color:antiquewhite; font-family:'Javanese Text';">@ViewBag.today</h4>
-                </div>
+<body style="padding-top:0px; " background="https://images.pexels.com/photos/242236/pexels-photo-242236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+
+    <!-- This is the top fixed header bar-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" style="font-family:Georgia; margin-left:510px;">Islamic Center of Mississippi at Starkville</a>
             </div>
+        </div>
+    </nav>
 
-        <!-- Navigation -->
-            <nav class="navbar navbar-default" style="z-index:1; margin: 0px;">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header">
-                    <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="#" class="navbar-brand">Brand</a>
-                </div>
 
-                <div id="navbarCollapse" class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li class="active">@Html.ActionLink("Contact Us", "Contact", "Contact")</li>
-                        <li class="active">@Html.ActionLink("Prayer Times", "Date", "Date")</li>
-                        <li class="active">@Html.ActionLink("Resources", "Index", "Home")</li>
-                        <li class="active">@Html.ActionLink("Services", "Contact", "Home")</li>
-                        <li class="active">@Html.ActionLink("About Us", "Paragraph", "Paragraph")</li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">ClickMe</a></li>
-                    </ul>
-                </div>
-            </nav>
-    </div>
+    <div class="row" style="margin-top: 52px;">
+        <!-- This is the side menu -->
+        <div class="col-md-2">
+            <div class="side-menu">
 
-    <div class=" container-fluid body-content" style="width:1540px;z-index:0;">
-        <div class="row" style="padding-left: 0px;">
-            <div class="col-md-1 fixed" style="width:220px; height:270px; margin: 0px;" id="color">
-                <h5>Hello</h5>
+                <nav class="navbar navbar-default" role="navigation">
+
+                    <!-- Main Menu -->
+                    <div class="side-menu-container">
+                        <ul class="nav navbar-nav">
+                            <li class="">@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li class="">@Html.ActionLink("Prayer Times", "Date", "Date")</li>
+                            <li class="">@Html.ActionLink("Resources", "Index", "Home")</li>
+                            <li class="">@Html.ActionLink("Services", "Index", "Home")</li>
+                            <li class="">@Html.ActionLink("About", "Paragraph", "Paragraph")</li>
+                            <li class="panel panel-default active" id="dropdown">
+                                <!-- Drop down-->
+                                <a data-toggle="collapse" href="#dropdown-lvl1">
+                                    <span class="glyphicon glyphicon-user"></span> About Us <span class="caret"></span>
+                                </a>
+                                <!-- Dropdown level 1 -->
+                                <div id="dropdown-lvl1" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <ul class="nav navbar-nav">
+                                            <li><a href="@Url.Action("Index", "Home")">Mousque History</a></li>
+                                            <li><a href="@Url.Action("Index", "Home")">Mousque Staff</a></li>
+                                            <li><a href="@Url.Action("Index", "Home")">Organization</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">@Html.ActionLink("Contact", "Contact", "Contact")</li>
+
+
+
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </nav>
+
             </div>
+        </div>
 
-
-            <div class="content col-md-10" style="width:1050px; height: 50px;">
+        <!-- This is the body div-->
+        <div class="content col-md-8" style="margin-top:35px;  margin-left: 0px; padding-left:0px; margin-right:0px; padding-right:0px;">
+            <div class="container body-content" style=" width:1000px;">
                 @if (TempData["notice"] != null)
                 {
                     <div id="mydiv" class="jumbotron jumbotron-fluid" style=" color:aquamarine; width:400px; background-color:mediumseagreen !important;">
@@ -117,97 +78,87 @@
                     </div>
                 }
                 @RenderBody()
-            </div>
-
-
-
-            <!-- Side Table -->
-            <!--   <div class="col-md-1" style="background-color: rgba(255, 255, 255, 0);  width:270px; height:360px; margin-top:170px; margin-top:120px; z-index:10; padding-left: 0px;">
-                <div style="position:fixed;">
-                    <h3 style="color:darkslateblue; ">Today's Prayer Schedule: </h3>
-                    <table class="table table-curved table-sm table-bordered" style="background-color:white; width:100%;">
-                        <thead>
-                            <tr style="background-color:cornflowerblue; color:white; font-family:Calibri;">
-                                <th scope="row">Prayer</th>
-                                <th scope="row">Time</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">3</th>
-                                <th scope="row">4</th>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <th scope="row">4</th>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <th scope="row">4</th>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <th scope="row">4</th>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <th scope="row">4</th>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <th scope="row">4</th>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                </div>
-                </div>
-
-
 
             </div>
         </div>
-            -->
-            <!-- Footer -->
-            <div class="footer" style="margin-top:670px;">
 
-                <h4>&copy; @DateTime.Now.Year - ICM Starkville</h4>
+
+        <!-- This is the fixed right side table-->
+        <div class="col-md-1" style="background-color: rgba(255, 255, 255, 0);  width:150px; margin-top:30px; z-index:1; padding-left: 0px; margin-right:20px;">
+            <div style="position:fixed; padding-left: 0px; margin-right:40px;">
+                <h3 style="color:darkslateblue; ">Today's Prayer Schedule: </h3>
+                <table class="table table-curved table-sm table-bordered" style="background-color:white; width:100%;">
+                    <thead>
+                        <tr style="background-color:cornflowerblue; color:white; font-family:Calibri;">
+                            <th scope="row">Prayer</th>
+                            <th scope="row">Time</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Fajr</th>
+                            <th scope="row">4:45</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">Duhr</th>
+                            <th scope="row">1:00</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">Asr</th>
+                            <th scope="row">4:45</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">Magrib</th>
+                            <th scope="row">6:20</th>
+                        </tr>
+                        <tr>
+                            <th scope="row">Isha</th>
+                            <th scope="row">8:00</th>
+                        </tr>
+                    </tbody>
+                </table>
+
             </div>
-
-            <div>
-                @Scripts.Render("~/bundles/jquery")
-                @Scripts.Render("~/bundles/bootstrap")
-                @RenderSection("scripts", required: false)
-            </div>
-
-            <!-- JS Scripts -->
-            <script>
-                setTimeout(fade_out, 2000);
-
-                function fade_out() {
-                    $("#mydiv").fadeOut().empty();
-                }
-
-                // When the user scrolls the page, execute myFunction
-                window.onscroll = function () { myFunction() };
-
-                // Get the header
-                var header = document.getElementById("myHeader");
-
-                // Get the offset position of the navbar
-                var sticky = header.offsetTop;
-
-                // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
-                function myFunction() {
-                    if (window.pageYOffset > sticky) {
-                        header.classList.add("sticky");
-                    } else {
-                        header.classList.remove("sticky");
-                    }
-                }
-            </script>
         </div>
+
+
+
     </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - ICM Starkville</p>
+    </footer>
+
+    <!-- JS Scripts -->
+    <script>
+        setTimeout(fade_out, 2000);
+
+        function fade_out() {
+            $("#mydiv").fadeOut().empty();
+        }
+
+        // When the user scrolls the page, execute myFunction
+        window.onscroll = function () { myFunction() };
+
+        // Get the header
+        var header = document.getElementById("myHeader");
+
+        // Get the offset position of the navbar
+        var sticky = header.offsetTop;
+
+        // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        }
+    </script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
 </body>
 </html>
