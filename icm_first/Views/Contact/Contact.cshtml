@@ -7,28 +7,34 @@
 @using (Html.BeginForm())
 {
 
-    <h3 class="control-label" style=" color:darkslategray; font-size:25px;">Please send us a message for any questions, suggestions or concerns: </h3>
+    <h3 class="control-label" style=" color:darkslategray; font-size:20px; margin:0px; padding:0px;">Please send us a message for any questions, suggestions or concerns: </h3>
 
-    <div class="well" style="margin-top:20px;">
+    <div class="well" style="margin-top:0px; max-width:90%; max-height:90%;">
         <div class="row">
             <div class="col-md-4">
-                <div class="form-group">
+                <div class="form-group"  style="margin:0px; padding:0px;">
                     @Html.LabelFor(model => model.Name, new { @class = "control-label" })<br />
                     @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = " Full Name" })<br />
                     @Html.ValidationMessageFor(model => model.Name)<br />
                 </div>
-                <div class="form-group">
+                <div class="form-group" style="margin:0px; padding:0px;">
 
                     @Html.LabelFor(model => model.Email, new { @class = "control-label" })<br />
                     @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Your Email Address" })<br />
                     @Html.ValidationMessageFor(model => model.Email)<br />
+                </div>
+                <div class="form-group" style="margin:0px;">
+
+                    @Html.LabelFor(model => model.Subject, new { @class = "control-label" })<br />
+                    @Html.TextBoxFor(model => model.Subject, new { @class = "form-control", placeholder = "Subject (Optional)" })<br />
+                    @Html.ValidationMessageFor(model => model.Subject)<br />
                 </div>
                 <div class="form-group" style="margin:0px; padding:0px;">
                     @Html.LabelFor(model => model.Message, new { @class = "control-label" })<br />
                     @Html.TextAreaFor(model => model.Message, new { @class = "form-control", rows = "5", placeholder = "Type your message here ..." })<br />
                     @Html.ValidationMessageFor((model => model.Message))<br />
                 </div>
-                <div class="container">
+                <div class="container" style="margin:0px;">
                     <div class="row">
                         <button type="button" onclick="location.href='@Url.Action("Index", "Home")';return false;" class="btn btn-info btn-lg" style="width:140px;">Back</button>
                         <button type="submit" class="btn btn-success btn-lg" style="width:140px;">Send</button>
