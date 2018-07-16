@@ -7,9 +7,9 @@
 @using (Html.BeginForm())
 {
 
-    <h3 class="control-label" style=" color:darkslategray; font-size:30px;">Please send us a message for any questions, suggestions or concerns: </h3>
+    <h3 class="control-label" style=" color:darkslategray; font-size:25px;">Please send us a message for any questions, suggestions or concerns: </h3>
 
-    <div class="well" style="margin-top:40px;">
+    <div class="well" style="margin-top:20px;">
         <div class="row">
             <div class="col-md-4">
                 <div class="form-group">
@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group" style="margin:0px; padding:0px;">
                     @Html.LabelFor(model => model.Message, new { @class = "control-label" })<br />
-                    @Html.TextAreaFor(model => model.Message, new { @class = "form-control", rows = "7", placeholder = "Type your message here ..." })<br />
+                    @Html.TextAreaFor(model => model.Message, new { @class = "form-control", rows = "5", placeholder = "Type your message here ..." })<br />
                     @Html.ValidationMessageFor((model => model.Message))<br />
                 </div>
                 <div class="container">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-7" style="color:cadetblue; padding:4px; margin:30px;">
+            <div class="col-md-7" style="color:cadetblue; padding:4px; margin:20px;">
                 <img src="http://icm-starkville.org/images/Banners/113-image.png"/>
             </div>
         </div>

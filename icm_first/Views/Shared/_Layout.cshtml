@@ -11,7 +11,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
-<body style="padding-top:0px; "background="https://images.pexels.com/photos/242236/pexels-photo-242236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+<body style="padding-top:0px; max-width:100%; max-height:100%;  "background="https://images.pexels.com/photos/242236/pexels-photo-242236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
 
     <!-- This is the top fixed header bar-->
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -43,6 +43,7 @@
                             <li class="">@Html.ActionLink("Prayer Times", "Date", "Date")</li>
                             <li class="">@Html.ActionLink("Resources", "Index", "Home")</li>
                             <li class="">@Html.ActionLink("Services", "Index", "Home")</li>
+                            <li class="">@Html.ActionLink("Donate", "Index", "Home")</li>
                             <li class="panel panel-default active" id="dropdown">
                                 <!-- Drop down-->
                                 <a data-toggle="collapse" href="#dropdown-lvl1">
