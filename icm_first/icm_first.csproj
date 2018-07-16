@@ -233,6 +233,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Date\Date.cshtml" />
     <Content Include="Views\Home\Resources.cshtml" />
+    <Content Include="Views\Paragraph\History.cshtml" />
+    <Content Include="Views\Paragraph\Organization.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -16,8 +16,14 @@
     <!-- This is the top fixed header bar-->
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <h2 class="navbar-brand" style="font-family:Georgia; color:gainsboro;">Islamic Center of Mississippi at Starkville</h2>
+            <div>
+                <div class="navbar-header col-md-8" style="margin:0px;">
+                    <h2 class="navbar-brand" style="font-family:Georgia; color:gainsboro; position:fixed;">Islamic Center of Mississippi at Starkville</h2>
+                </div>
+                    <div class="col-md-3" style="padding:0px; margin:0px;">
+                        <h4 style="color:antiquewhite; font-family:'Javanese Text';">@ViewBag.hijriDay   @ViewBag.today</h4>
+                    </div>
+               
             </div>
         </div>
     </nav>
@@ -47,9 +53,9 @@
                                 <div id="dropdown-lvl1" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="@Url.Action("Index", "Home")">Mousque History</a></li>
-                                            <li><a href="@Url.Action("Index", "Home")">Mousque Staff</a></li>
-                                            <li><a href="@Url.Action("Index", "Home")">Organization</a></li>
+                                            <li class="">@Html.ActionLink("History", "Paragraph", "Paragraph")</li>
+                                            <li class="">@Html.ActionLink("Staff", "Paragraph", "Paragraph")</li>
+                                            <li class="">@Html.ActionLink("Organization", "Paragraph", "Paragraph")</li>
                                         </ul>
                                     </div>
                                 </div>
