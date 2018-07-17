@@ -177,6 +177,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\DateController.cs" />
+    <Compile Include="Controllers\DonateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ParagraphController.cs" />
     <Compile Include="Global.asax.cs">
@@ -226,7 +227,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Paragraph\Paragraph.cshtml" />
@@ -236,6 +236,7 @@
     <Content Include="Views\Home\Resources.cshtml" />
     <Content Include="Views\Paragraph\History.cshtml" />
     <Content Include="Views\Paragraph\Organization.cshtml" />
+    <Content Include="Views\Donate\Donate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
