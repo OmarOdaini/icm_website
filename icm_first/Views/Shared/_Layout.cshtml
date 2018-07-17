@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" http-equiv="X-UA-Compatible" content="width=device-width, initial-scale=1.0 ,IE=edge, chrome=1">
     <link href="~/Styles/SideBar.css" rel="stylesheet" />
     <link href="~/Styles/TopBar.css" rel="stylesheet" />
     <link href="~/Styles/mainPage.css" rel="stylesheet" />
@@ -17,11 +17,11 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div>
-                <div class="navbar-header col-md-10" style="margin:0px;">
+                <div class="navbar-header col-md-9" style="margin-right:30px;">
                     <h2 class="navbar-brand" style="font-family:Georgia; color:gainsboro; position:fixed;">Islamic Center of Mississippi at Starkville</h2>
                 </div>
-                    <div class="col-md-3" style="padding:0px; margin:0px;">
-                        <h4 style="color:antiquewhite; font-family:'Javanese Text';">@ViewBag.hijriDay   @ViewBag.today</h4>
+                    <div class="col-md-2" style="padding:0px; margin:0px;">
+                        <h4 style="color:antiquewhite; font-family:'Javanese Text'; margin-top:18px;">@ViewBag.hijriDay</h4>
                     </div>
                
             </div>
@@ -31,13 +31,13 @@
 
     <div class="row" style="margin-top: 50px;">
         <!-- This is the side menu -->
-        <div class="col-md-1">
+        <div class="col-md-2">
             <div class="side-menu">
 
                 <nav class="navbar navbar-default" role="navigation">
 
                     <!-- Main Menu -->
-                    <div class="side-menu-container">
+                    <div class="side-menu-container" style="width:200px;">
                         <ul class="nav navbar-nav">
                             <li class="">@Html.ActionLink("Home", "Index", "Home")</li>
                             <li class="">@Html.ActionLink("Prayer Times", "Date", "Date")</li>
@@ -72,8 +72,8 @@
         </div>
 
         <!-- This is the body div-->
-        <div class="content col-md-8" style="margin-top:35px;  margin-left: 60px; margin-right:0px; padding:0px;">
-            <div class="container body-content" style=" width:1000px;">
+        <div class="content col-md-7" style="margin-top:35px; margin-right:0px; padding:0px;">
+            <div class="container body-content" style=" width:930px;">
                 @if (TempData["notice"] != null)
                 {
                     <div id="mydiv" class="jumbotron jumbotron-fluid" style=" color:aquamarine; width:400px; background-color:mediumseagreen !important;">
@@ -90,10 +90,10 @@
 
 
         <!-- This is the fixed right side table-->
-        <div class="col-md-2" style="background-color: rgba(255, 255, 255, 0); margin-top:30px; margin-left:0px; max-width:100%; z-index:1;">
+        <div class="col-md-1" style="background-color: rgba(255, 255, 255, 0); margin-top:50px; margin-left:60px; z-index:1;">
             <div style="position:fixed;">
-                <h3 style="color:darkslateblue; ">Today's Prayer Schedule: </h3>
-                <table class="table table-curved table-sm table-dark table-bordered" style="background-color:white; width:100%;">
+                <h3 class="control-label" style=" color:darkslategray; font-size:20px; margin-left:20px;">Today's Prayer Schedule: </h3>
+                <table class="table table-curved table-sm table-dark table-bordered" style="background-color:white; max-width:100%; margin:15px;">
                     <thead>
                         <tr style="background-color:cornflowerblue; color:white; font-family:Calibri;">
                             <th scope="row">Prayer</th>
