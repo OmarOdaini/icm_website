@@ -58,6 +58,37 @@ namespace icm_first.Controllers
             }
         }
 
+        public ActionResult History(ParagraphModel model)
+        {
+            ViewBag.para = "Not Working !!";
+
+            if (ModelState.IsValid)
+            {
+
+                ViewBag.para = GetParagraphs(model);
+                return View();
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public ActionResult Organization(ParagraphModel model)
+        {
+            ViewBag.para = "Not Working !!";
+
+            if (ModelState.IsValid)
+            {
+
+                ViewBag.para = GetParagraphs(model);
+                return View();
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }
 

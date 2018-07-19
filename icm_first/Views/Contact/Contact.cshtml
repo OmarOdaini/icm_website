@@ -1,33 +1,52 @@
 ﻿@model icm_first.Models.ContactModel
 @{
     ViewBag.Title = "Contact";
-
-
-}
+ }
 @using (Html.BeginForm())
 {
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.Name, new { @class = "control-label" })<br />
-        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })<br />
-        @Html.ValidationMessageFor(model => model.Name)<br />
-    </div>
-    <div class="form-group">
+    <h3 class="control-label" style=" color:darkslategray; font-size:20px; margin:0px; padding:0px;">Please send us a message for any questions, suggestions or concerns: </h3>
 
-        @Html.LabelFor(model => model.Email, new { @class = "control-label" })<br />
-        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })<br />
-        @Html.ValidationMessageFor(model => model.Email)<br />
-    </div>
-    <div class="form-group" style="margin:0px; padding:0px;">
-        @Html.LabelFor(model => model.Message, new { @class = "control-label" })<br />
-        @Html.TextAreaFor(model => model.Message, new { @class = "form-control" })<br />
-        @Html.ValidationMessageFor((model => model.Message))<br />
-    </div>
-    <div class="container">
+    <div class="well" style="margin-top:10px; max-width:100%; max-height:90%;">
         <div class="row">
-            <button type="button" onclick="location.href='@Url.Action("Index", "Home")';return false;" class="btn btn-info btn-lg" style="width:140px;">Back</button>
-            <button type="submit" class="btn btn-success btn-lg" style="width:140px;">Send</button>
+            <div class="col-md-4">
+                <div class="form-group" style="margin:0px; padding:0px;">
+                    @Html.LabelFor(model => model.Name, new { @class = "control-label" })<br />
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder = " Full Name" })<br />
+                    @Html.ValidationMessageFor(model => model.Name)<br />
+                </div>
+                <div class="form-group" style="margin:0px; padding:0px;">
+
+                    @Html.LabelFor(model => model.Email, new { @class = "control-label" })<br />
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = "Your Email Address" })<br />
+                    @Html.ValidationMessageFor(model => model.Email)<br />
+                </div>
+                <div class="form-group" style="margin:0px;">
+
+                    @Html.LabelFor(model => model.Subject, new { @class = "control-label" })<br />
+                    @Html.TextBoxFor(model => model.Subject, new { @class = "form-control   ", placeholder = "Subject (Optional)" })<br />
+                    @Html.ValidationMessageFor(model => model.Subject)<br />
+                </div>
+                <div class="form-group" style="margin:0px; padding:0px;">
+                    @Html.LabelFor(model => model.Message, new { @class = "control-label" })<br />
+                    @Html.TextAreaFor(model => model.Message, new { @class = "form-control", rows = "5", placeholder = "Type your message here ..." })<br />
+                    @Html.ValidationMessageFor((model => model.Message))<br />
+                </div>
+                <div class="container" style="margin:0px;">
+                    <div class="row">
+                        <button type="button" onclick="location.href='@Url.Action("Index", "Home")';return false;" class="btn btn-info btn-lg" style="width:140px;">Back</button>
+                        <button type="submit" class="btn btn-success btn-lg" style="width:140px;">Send</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7" style="color:cadetblue; padding:0px; margin:30px;">
+                <img src="http://icm-starkville.org/images/Banners/113-image.png" />
+                <h6 class="MainTitle" style="margin:0px; padding:1px; font-size:25px;">Islamic Center of Mississippi</h6>
+                <p style="margin:0px;padding:0px; font-weight: bold; color: darkslategray;"> 204 Herbert St,</p>
+                <p style="margin:0px;padding:0px; font-weight: bold; color: darkslategray;"> Starkville, MS
+                <p class="addressInContact" style="margin:0px;padding:0px; font-weight: bold; color: darkslategray;">39759</p>
+                <p class="addressInContact" style="margin:0px;padding:0px; font-weight: bold; color: darkslategray;">Phone: (662) 323-6559 </p>
+            </div>
         </div>
     </div>
-  
 }

@@ -26,7 +26,7 @@ namespace icm_first.Controllers
         {
             if (ModelState.IsValid)
             {
-                SendEmail(model.Name, model.Email, model.Message);
+                SendEmail(model.Name, model.Email, model.Message,model.Subject);
                 TempData["notice"] = "Thank you, We got your message";
                 return RedirectToAction("Index", "Home");
             }
@@ -37,7 +37,7 @@ namespace icm_first.Controllers
         }
 
 
-        private void SendEmail(string name, string Email, string message)
+        private void SendEmail(string name, string Email, string message,string Subject = "")
         {
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.UseDefaultCredentials = false;
@@ -49,7 +49,7 @@ namespace icm_first.Controllers
             //Setting From , To and CC
             mail.From = new MailAddress("onabil4@gmail.com", name);
             mail.Body = message;
-            mail.Subject = name + "'s Message";
+            mail.Subject = Subject +"( "+Email+ " )";
             mail.To.Add(new MailAddress("onmh97@gmail.com"));
             smtpClient.Send(mail);
         }

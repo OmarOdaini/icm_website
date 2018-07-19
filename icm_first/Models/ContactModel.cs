@@ -13,8 +13,9 @@ namespace icm_first.Models
         [Required (ErrorMessage ="Please Re-enter your name")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Please use a correct email format")]
-        [RegularExpression(@".*@.*", ErrorMessage ="Warrap")]
+        [RegularExpression(@".*@.*", ErrorMessage ="Email format is required")]
         public string Email { get; set; }
+        public string Subject { get; set; }
 
         [Required]
         public string Message { get; set; }
